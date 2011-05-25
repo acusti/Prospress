@@ -146,7 +146,7 @@ function pp_feedback_rows( $feedback ){
 			$style = ( 'alternate' == $style ) ? '' : 'alternate';
 		}
 	} else {
-		echo '<tr><td colspan="5">You have no feedback.</td>';
+		echo '<tr><td colspan="6">You have no feedback.</td>';
 	}
 }
 
