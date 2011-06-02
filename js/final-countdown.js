@@ -8,7 +8,7 @@ Reads through document object for elements with class pp-end or countdown, reads
 writes to element in html the remaining time updating every second
 */
 function final_countdown(){
-	// use filter to make sure there is at least one element at the end with timedata in its id
+	// use filter to make sure there is at least one element with timedata in its id
 	var exists = $(".pp-end[id],.countdown[id]").filter(function(i) {
 		var post_end = new Date();
 		var now = new Date();
