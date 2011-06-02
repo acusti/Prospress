@@ -1,4 +1,3 @@
-
 jQuery(document).ready(function($) {
 	//initiate final_countdown
 	final_countdown();
@@ -14,7 +13,7 @@ function final_countdown(){
 		var post_end = new Date();
 		var now = new Date();
 		//extract end date
-		post_end.setTime($(this).attr("id")*1000);	//format to UTC(miliseconds)
+		post_end.setTime($(this).attr("id")*1000); //format to UTC(miliseconds)
 		//calculate time difference
 		var td=post_end-now;
 		//convert time difference to groups: Years, Months, Weeks, Days, Hours, Minutes, Seconds remaining
@@ -39,13 +38,13 @@ function final_countdown(){
 		var weeks = Math.floor(days/7);
 		var days_lw = days%7;
 		//Separate output for y/m/w/d/h/m/s ('s)
-		var y=(years>0&&years<2)?years+" year ":(years!=0)?years+" years ":"";
+		var y=(years>0&&years<2)?years+" year ":(years>0)?years+" years ":"";
 		var m=(months>0&&months<2)?months+" month ":(months>0)?months+" months ":"";
-		var w=(weeks>0&&weeks<2)?weeks+" week ":(weeks!=0)?weeks+" weeks ":"";
-		var dlw=(days_lw>0&&days_lw<2)?days_lw+" day":(days_lw!=0)?days_lw+" days ":"";
+		var w=(weeks>0&&weeks<2)?weeks+" week ":(weeks>0)?weeks+" weeks ":"";
+		var dlw=(days_lw>0&&days_lw<2)?days_lw+" day":(days_lw>0)?days_lw+" days":"";
 
 		var d=(days>0&&days<2&&td>one_day)?days+" day":(days!=0&&td>one_day)?days+" days":"";
-		function _s(i){if(i>1) i="s"; else i="";return i;} // add plural
+		function _s(i){if(i>1||i==0) i="s"; else i="";return i;} // add plural
 		var hms="";
 		if (td<one_day&&hours>=1)
 			var hms=hours+" hour"+_s(hours)+" "+mins+" minute"+_s(mins);
